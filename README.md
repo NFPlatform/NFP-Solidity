@@ -17,7 +17,7 @@
   (쉽게 사람 한명이 NFT를 하나 만든다고 생각하면 된다.)<br/><br/>
   
   
-  safeTransferFrom 함수는 from(즉 현재 소유자) 이 to (이제 가질 사람) 에게 tokenId를 전송하는것이다. <br/><br/>
+  safeTransferFrom 함수는 from(즉 현재 소유자) 이 to (이제 가질 사람) 에게 tokenId를 전송하는것이다. <br/>
             
             
             
