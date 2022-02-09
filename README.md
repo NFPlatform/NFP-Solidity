@@ -14,15 +14,14 @@
 1. NFT-Market.sol에서 NFTSimple contract를 실행한다.
   
      ->mintWithTokenURI 함수를 사용해서 to에게 tokenId와 tokenURI가 있는 토큰을 발행한다 <br/>
-     ->(쉽게 사람 한명이 NFT를 하나 만든다고 생각하면 된다.)<br/><br/>
+        (쉽게 사람 한명이 NFT를 하나 만든다고 생각하면 된다.)<br/><br/>
   
   
-     ->safeTransferFrom 함수는 from(즉 현재 소유자) 이 to (이제 가질 사람) 에게 tokenId를 전송하는것이다. <br/>
+      -> safeTransferFrom 함수는 from(즉 현재 소유자) 이 to (이제 가질 사람) 에게 tokenId를 전송하는것이다. <br/>
             
             
-            
-  to (스마트컨트랙트 즉 우리 nfp사이트에 올리는 경우) -> <br/>
-           to에 NFTMARKET 컨트랙트의 주소를 적어서 보내주면 된다. 그럼 사이트에 등록됨 <br/>
+      -> to (스마트컨트랙트 즉 우리 nfp사이트에 올리는 경우) -> <br/>
+            to에 NFTMARKET 컨트랙트의 주소를 적어서 보내주면 된다. 그럼 사이트에 등록됨 <br/>
             NFTMARKET안에 seller를 확인해보면 우리 사이트에 올린 사람의 주소가 나온다 (즉 실제로 판매하는 사람의 주소를 우리사이트에서 확인가능<br/><br/>
             
             
