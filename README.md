@@ -1,38 +1,53 @@
 # NFP-Solidity
 
+작가가 그림 등록하려고 할때 호출하는 함수 순서
 
-
-KIP: klaytn Improvement Proposals
-
-KIP7 : 일반적인 토큰임 fungible-token (작품을 사면 nfp토큰을 바로 이걸로 만듬)
-KIP17 : nft토큰에 대한 표준 인터페이스 non-fungible-token ()
--> nft 전송, 소유자가 누구인지 누구한테 허락하는지 등이 함수로 적혀 있음
-
-KIP37 : nft토큰이지만 토큰한개당 하나만 발행하는 17토큰과 달리 여러개 발행 가능
-
-### KIP17
-
+  1. 작가가 자신만의 nft 즉 그림을 만든다
+  2. 그림을 사이트에 올린다
+  3. 사이트에 올라온 nft를 다른 사람이 산다 
 ---
 
+  1. NFT-Market.sol에서 NFTSimple contract를 실행한다.
+  
+   1-1. mintWithTokenURI 함수를 사용해서 to에게 tokenId와 tokenURI가 있는 토큰을 발행한다 (쉽게 사람 한명이 NFT를 하나 만든다고 생각하면 된다.)
+  
+  
+   1-2. safeTransferFrom 함수는 from(즉 현재 소유자) 이 to (이제 가질 사람) 에게 tokenId를 전송하는것이다.
+   
+        
+           to (스마트컨트랙트 즉 우리 nfp사이트에 올리는 경우) ->
+           to에 NFTMARKET 컨트랙트의 주소를 적어서 보내주면 된다. 그럼 사이트에 등록됨
+           
+            NFTMARKET안에 seller를 확인해보면 우리 사이트에 올린 사람의 주소가 나온다 (즉 실제로 판매하는 사람의 주소를 우리사이트에서 확인가능
+  
+   1-3. NFTMARKET안에 buyNFT함수를 통해서 구매자에게 판매할수 있다. -> 여기서는 tokenId와 NFTSimple contract주소를 먼저 적어줘야한다. 
+      -> 즉 소유자가 우리 사이트에서 다시 작가로 감 -> 그리고 그 작가에서  
+      -> 여기서는 사는 사람은 수수료를 내야함 (0.001클레이정도) (payable이 적혀있는 함수는 실제 돈이 왔다갔다하는 함수)
+      
+      
+      ---
 
 ### NFT-Market.sol
 
 contract가 NFTSimple과 NFTMARKET 두개가 있다.
-자세한 내용은 코드에 주석으로 적혀있다.
+문법에 대한 자세한 내용은 코드에 주석으로 적혀있다.
 
-#### NFTSimple 컨트랙트에 대한 함수 순서 위주의 설명 
+#### NFTSimple 컨트랙트에 대한 함수 실행 순서 위주의 설명 
 
-   ** mintWithTokenURI함수와 safeTransferFrom함수가 핵심이다. 
+NFTsimple로 하나의 nft를 만든다 그리고 전송을 할수가 있다
+
+NFTMARKET으로는 우리가 만든 사이트에서 실제 nft를 사고팔때 작동하는 스마트 컨트랙트이다.
+
+
+
+   ** mintWithTokenURI함수와 safeTransferFrom함수가 핵심이다. **
       
-  ** mintWithTokenURI함수로 개인이 nft토큰을 만들고 다른사람에게 보낼때 safeTransferFrom함수를 사용한다.
+  ** mintWithTokenURI함수로 개인이 nft토큰을 만들고 다른사람에게 보낼때 safeTransferFrom함수를 사용한다. 
       
       -> mintWithTokenURI함수를 사용해서 to에게 tokenId와 tokenURI가 있는 토큰을 발행한다 (쉽게 사람 한명이 NFT를 하나 만든다고 생각하면 된다.)
-      
-      
+     
       -> safeTransferFrom함수는 from(즉 현재 소유자) 이 to (이제 가질 사람) 에게 tokenId를 전송하는것이다.
-          (require문법을 써서 from == msg.sender)
-      
-      
+          (require문법을 써서 from == msg.sender) 
       
       -> tokenOwner함수에 tokenId를 적으면 tokenOwner에서는 tokenId를 소유한 사람의 주소를 확인 할 수 있다. 
       
