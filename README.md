@@ -13,7 +13,7 @@
 
 1. NFT-Market.sol에서 NFTSimple contract를 실행한다.
   
-  mintWithTokenURI 함수를 사용해서 to에게 tokenId와 tokenURI가 있는 토큰을 발행한다 
+  mintWithTokenURI 함수를 사용해서 to에게 tokenId와 tokenURI가 있는 토큰을 발행한다 <br/>
   (쉽게 사람 한명이 NFT를 하나 만든다고 생각하면 된다.)<br/><br/>
   
   
