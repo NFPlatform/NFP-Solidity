@@ -22,7 +22,7 @@
             
       -> to (스마트컨트랙트 즉 우리 nfp사이트에 올리는 경우) -> <br/>
             to에 NFTMARKET 컨트랙트의 주소를 적어서 보내주면 된다. 그럼 사이트에 등록됨 <br/>
-            NFTMARKET안에 seller를 확인해보면 우리 사이트에 올린 사람의 주소가 나온다 (즉 실제로 판매하는 사람의 주소를 우리사이트에서 확인가능<br/><br/>
+            NFTMARKET안에 seller를 확인해보면 우리 사이트에 올린 사람의 주소가 나온다 <br/> (즉 실제로 판매하는 사람의 주소를 우리사이트에서 확인가능<br/><br/>
             
             
 2.  NFTMARKET안에 buyNFT함수를 통해서 구매자에게 판매할수 있다. -> 여기서는 tokenId와 NFTSimple contract주소를 적어줘야한다.<br/><br/>
