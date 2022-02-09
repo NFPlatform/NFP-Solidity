@@ -7,7 +7,7 @@
   3. 사이트에 올라온 nft를 다른 사람이 산다 
 
 
-  KIP17Token에서 우리가 사용할 것들만 간단히 빼서 만든게 NFT-Market.sol 안에 있는 NFTSimple contract이다.  <br/>
+  KIP17Token에서 우리가 사용할 것들만 간단히 빼서 만든게 NFT-Market.sol 안에 있는 NFTSimple contract이다.  <br/><br/><br/><br/>
  
 ---
 
