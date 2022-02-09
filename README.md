@@ -7,9 +7,8 @@
   3. 사이트에 올라온 nft를 다른 사람이 산다 
 ---
 
-  1. NFT-Market.sol에서 NFTSimple contract를 실행한다.
-  
-   1-1. mintWithTokenURI 함수를 사용해서 to에게 tokenId와 tokenURI가 있는 토큰을 발행한다 (쉽게 사람 한명이 NFT를 하나 만든다고 생각하면 된다.)
+1. NFT-Market.sol에서 NFTSimple contract를 실행한다.
+  1-1. mintWithTokenURI 함수를 사용해서 to에게 tokenId와 tokenURI가 있는 토큰을 발행한다 (쉽게 사람 한명이 NFT를 하나 만든다고 생각하면 된다.)
   
   
    2. safeTransferFrom 함수는 from(즉 현재 소유자) 이 to (이제 가질 사람) 에게 tokenId를 전송하는것이다. 
@@ -22,7 +21,9 @@
             
   3. NFTMARKET안에 buyNFT함수를 통해서 구매자에게 판매할수 있다. -> 여기서는 tokenId와 NFTSimple contract주소를 먼저 적어줘야한다. 
       -> 즉 소유자가 우리 사이트에서 다시 작가로 감 -> 그리고 그 작가에서  
-      -> 여기서는 사는 사람은 수수료를 내야함 (0.001클레이정도) (payable이 적혀있는 함수는 실제 돈이 왔다갔다하는 함수)
+      -> 여기서는 사는 사람은 수수료를 내야함 (0.001클레이정도) (payable이 적혀있는 함수는 실제 돈이 왔다갔다하는 함수)  
+  
+   
       
       
 ---
