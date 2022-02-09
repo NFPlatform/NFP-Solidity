@@ -10,7 +10,7 @@ KIP17 : nft토큰에 대한 표준 인터페이스 non-fungible-token ()
 
 KIP37 : nft토큰이지만 토큰한개당 하나만 발행하는 17토큰과 달리 여러개 발행 가능
 
-
+---
 ### KIP17
 
 ### NFT-Market.sol
@@ -39,8 +39,7 @@ contract가 NFTSimple과 NFTMARKET 두개가 있다.
       -> ownedToken함수에 nft를 소유한 사람의 주소를 적으면 그 소유자가 소유하고 있는 tokenId가 순서대로 나온다. (배열에 각각의 tokenId를 넣었다.)
       
       
-      
-      
+      ---
       
 #### NFTMARKET 컨트랙트에 대한 함수 순서 위주의 설명
 
