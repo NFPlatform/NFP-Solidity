@@ -163,5 +163,26 @@ contract Ballot {
         DAObalance = address(this).balance;
         }
     }
+     function winningProposal() public view
+            returns (uint winningProposal_)
+    {
+        uint winningVoteCount = 0;
+        for (uint p = 0; p < proposals.length; p++) {
+            if (proposals[p].voteCount > winningVoteCount) {
+                winningVoteCount = proposals[p].voteCount;
+                winningProposal_ = p;
+            }
+        }
+    }
+
+    /** 
+     * @dev Calls winningProposal() function to get the index of the winner contained in the proposals array and then
+     * @return winnerName_ the name of the winner
+     */
+    function winnerName() public view
+            returns (bytes32 winnerName_)
+    {
+        winnerName_ = proposals[winningProposal()].name;
+    }
    
 }
